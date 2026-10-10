@@ -1,0 +1,480 @@
+```css
+/* ========================================
+   1. GLOBAL STYLES
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 35px 16px 50px;
+
+    font-family: 'Nunito', sans-serif;
+    color: #75445a;
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #fff5f7 0%,
+        #ffe4ec 50%,
+        #ffdce8 100%
+    );
+
+    overflow-x: hidden;
+}
+
+/* ========================================
+   2. MAIN CONTAINER
+======================================== */
+
+.container {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    animation: fadeIn 1s ease both;
+}
+
+/* ========================================
+   3. MAIN HEADING
+======================================== */
+
+.container > h1 {
+    width: 100%;
+    margin: 10px 0 20px;
+
+    color: #d94f80;
+    font-size: clamp(25px, 5vw, 36px);
+    font-weight: 900;
+    line-height: 1.35;
+
+    text-shadow: 0 2px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* ========================================
+   4. CUTE GIF
+======================================== */
+
+.gif-container {
+    width: 100%;
+    margin: 4px auto 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cat-gif {
+    display: block;
+
+    width: 180px;
+    max-width: 70%;
+    max-height: 220px;
+
+    object-fit: contain;
+
+    border-radius: 16px;
+
+    animation: floatCat 3s ease-in-out infinite;
+}
+
+/* ========================================
+   5. APOLOGY LETTER CARD
+======================================== */
+
+.apology-card {
+    width: 100%;
+    max-width: 430px;
+    margin: 8px auto 20px;
+    padding: 25px 22px;
+
+    background: rgba(255, 253, 249, 0.96);
+    color: #684553;
+
+    border: 1px solid #f4c6d7;
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(190, 80, 125, 0.13),
+        0 2px 5px rgba(190, 80, 125, 0.05);
+
+    animation: letterAppear 1s ease both;
+}
+
+.heart-decoration {
+    color: #e58baa;
+    font-size: 18px;
+    letter-spacing: 8px;
+    text-align: center;
+}
+
+.apology-card h2 {
+    margin: 12px 0 20px;
+
+    color: #a34469;
+    font-family: Georgia, serif;
+    font-size: 23px;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.letter-body {
+    padding: 8px 0;
+    margin: 0;
+
+    border-top: 1px solid #f1d7df;
+    border-bottom: 1px solid #f1d7df;
+}
+
+.letter-body p {
+    margin: 15px 0;
+
+    color: #684553;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.letter-signoff {
+    margin: 20px 0 0;
+
+    color: #b64c75;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: bold;
+
+    text-align: right;
+}
+
+/* ========================================
+   6. APOLOGY QUESTION
+======================================== */
+
+.apology-question {
+    width: 100%;
+    margin: 15px 0 18px;
+    padding: 0 5px;
+
+    color: #c74677;
+    font-size: clamp(21px, 4.5vw, 27px);
+    font-weight: 900;
+    line-height: 1.5;
+}
+
+/* ========================================
+   7. YES AND NOT YET BUTTONS
+======================================== */
+
+.buttons {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    position: relative;
+    z-index: 10;
+
+    width: 100%;
+    margin: 8px auto 20px;
+}
+
+.buttons button {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    position: relative;
+
+    min-width: 115px;
+    padding: 12px 24px;
+
+    border: none;
+    border-radius: 15px;
+
+    font-family: 'Nunito', sans-serif;
+    font-size: 17px;
+    font-weight: 900;
+
+    cursor: pointer;
+    touch-action: manipulation;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+/* Yes button */
+
+#yes-btn {
+    background: linear-gradient(
+        135deg,
+        #ff77a8,
+        #f04e88
+    );
+
+    color: #ffffff;
+
+    box-shadow: 0 5px 14px rgba(240, 78, 136, 0.28);
+}
+
+#yes-btn:hover {
+    background: linear-gradient(
+        135deg,
+        #ff619b,
+        #e83f7c
+    );
+
+    transform: translateY(-3px) scale(1.04);
+
+    box-shadow: 0 8px 18px rgba(240, 78, 136, 0.35);
+}
+
+/* Not yet button */
+
+#no-btn {
+    background: #fff0f5;
+    color: #a34469;
+
+    border: 1px solid #f4c6d7;
+
+    box-shadow: 0 4px 10px rgba(180, 70, 110, 0.08);
+}
+
+#no-btn:hover {
+    background: #ffe0eb;
+    transform: translateY(-3px);
+}
+
+/* Keyboard accessibility */
+
+.buttons button:focus-visible {
+    outline: 3px solid #a34469;
+    outline-offset: 4px;
+}
+
+/* ========================================
+   8. TOAST / BUTTON MESSAGES
+======================================== */
+
+#tease-toast {
+    display: block;
+
+    width: 100%;
+    max-width: 400px;
+    min-height: 0;
+
+    margin: 8px auto;
+    padding: 0;
+
+    color: #b64c75;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.6;
+
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+/* ========================================
+   9. MUSIC TOGGLE
+======================================== */
+
+#music-toggle {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 100;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #ffffff;
+    color: #c74677;
+
+    border: 1px solid #f4c6d7;
+    border-radius: 50%;
+
+    box-shadow: 0 4px 14px rgba(180, 70, 110, 0.15);
+
+    font-size: 21px;
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+#music-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* ========================================
+   10. FLOATING HEARTS BACKGROUND
+======================================== */
+
+.hearts-bg {
+    position: fixed;
+    inset: 0;
+
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.hearts-bg::before,
+.hearts-bg::after {
+    content: "♥   ♡   ♥   ♡   ♥";
+
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+
+    width: 100%;
+
+    color: rgba(238, 104, 153, 0.15);
+    font-size: 25px;
+    letter-spacing: 25px;
+    white-space: nowrap;
+
+    animation: heartsRise 14s linear infinite;
+}
+
+.hearts-bg::after {
+    animation-delay: -7s;
+    font-size: 19px;
+    color: rgba(238, 104, 153, 0.11);
+}
+
+/* ========================================
+   11. ANIMATIONS
+======================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes letterAppear {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatCat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes heartsRise {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-120vh);
+    }
+}
+
+/* ========================================
+   12. MOBILE RESPONSIVENESS
+======================================== */
+
+@media (max-width: 480px) {
+    body {
+        padding: 22px 14px 85px;
+    }
+
+    .container > h1 {
+        margin: 8px 0 16px;
+    }
+
+    #cat-gif {
+        width: 150px;
+        max-height: 180px;
+    }
+
+    .apology-card {
+        padding: 22px 16px;
+        border-radius: 19px;
+    }
+
+    .apology-card h2 {
+        font-size: 21px;
+    }
+
+    .letter-body p {
+        font-size: 14px;
+        margin: 13px 0;
+    }
+
+    .apology-question {
+        margin: 12px 0 16px;
+    }
+
+    .buttons {
+        gap: 12px;
+    }
+
+    .buttons button {
+        min-width: 105px;
+        padding: 12px 19px;
+        font-size: 16px;
+    }
+
+    #music-toggle {
+        right: 14px;
+        bottom: 14px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+```
